@@ -1,11 +1,11 @@
 FROM ubuntu:14.04
-MAINTAINER Sumit Chawla <sumitkchawla@gmail.com>
+MAINTAINER Thomas Coleman <colemantw@gmail.com>
 
 # Update the image
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install Dependencies
-RUN apt-get install -y openssh-server openssh-client mcelog gdb sysstat
+RUN apt-get install -y openssh-server openssh-client mcelog gdb sysstat dialog
 
 # grab gosu for easy step-down from root
 RUN apt-get install -y curl \
