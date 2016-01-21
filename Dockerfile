@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM isuper/java-oracle:server_jre_8
 MAINTAINER Thomas Coleman <colemantw@gmail.com>
 
 # Update the image
