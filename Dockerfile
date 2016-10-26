@@ -1,5 +1,4 @@
-FROM isuper/java-oracle:server_jre_8
-MAINTAINER Thomas Coleman <colemantw@gmail.com>
+FROM ubuntu:14.04
 
 # Update the image
 RUN apt-get update -y && apt-get upgrade -y
@@ -39,7 +38,7 @@ RUN /opt/vertica/sbin/install_vertica --license CE --accept-eula --hosts 127.0.0
 
 # Test DB creation as dbuser
 USER dbadmin
-RUN /opt/vertica/bin/admintools -t create_db -s localhost -d docker -c /home/dbadmin/docker/catalog -D /home/dbadmin/docker/data
+RUN /opt/vertica/bin/admintools -t create_db -s localhost -d docker --skip-fs-checks -c /home/dbadmin/docker/catalog -D /home/dbadmin/docker/data
 
 USER root
 
